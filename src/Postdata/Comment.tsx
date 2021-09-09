@@ -6,7 +6,7 @@ const render=()=>{
     const output:JSX.Element[]=[]
     const EIEIComment=comments
     console.log(EIEIComment)
-    output.push(...EIEIComment.map(x=><CmTmp username={x.username} userImagePath={x.userImagePath} commentText={x.commentText} likeNum={x.likeNum} replies={x.replies} />))
+    output.push(...EIEIComment.map(x=><CmTmp username={x.username} userImagePath={x.userImagePath} commentText={x.commentText} likeNum={x.likeNum} replies={x.replies} key={x.username} />))
     return output
 }    
 return (<div>

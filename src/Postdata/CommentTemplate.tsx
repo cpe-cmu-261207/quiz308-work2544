@@ -5,10 +5,11 @@ const CmTmp=({username,userImagePath,commentText,likeNum,replies}:CommentType)=>
     const renderPeply=()=>{
 
         const output: JSX.Element[] = []
-                output.push(...replies.map(x=><ReplyFn username={x.username} userImagePath={x.userImagePath} commentText={x.commentText} likeNum={x.likeNum} replies={x.replies} />))  
+                output.push(...replies.map(x=><ReplyFn username={x.username} userImagePath={x.userImagePath} commentText={x.commentText} likeNum={x.likeNum} replies={x.replies} key={x.username} />))  
         return output
     }
 return (
+    <div className="flex flex-col">
 <div className="flex p-2 items-start space-x-2">
   <img className="w-10 w-10 rounded-full" src={userImagePath}></img>
   <div className="bg-gray-500 rounded-lg p-2">
@@ -22,9 +23,9 @@ return (
       <p className='text-gray-300'>{likeNum}</p>
     </div>
     }
-    
   </div>
-  {renderPeply()}
+</div>
+{renderPeply()}
 </div>
 );
 }
