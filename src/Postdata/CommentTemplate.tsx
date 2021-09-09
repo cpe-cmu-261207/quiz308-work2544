@@ -16,7 +16,7 @@ const CmTmp = ({ username, userImagePath, commentText, likeNum, replies }: Comme
                     <p className='text-white'>{commentText}</p>
                     {/* like section (จะไม่แสดงถ้าไม่มีใครไลค์เลย) */}
                     {
-                        likeNum === 0 ? null :
+                        likeNum <= 0 ? null :
                             <div className='flex items-center'>
                                 <img className='w-4 h-4 mr-1' src='/like.svg'></img>
                                 <p className='text-gray-300'>{likeNum}</p>

@@ -9,7 +9,7 @@ const ReplyFn = ({ username, userImagePath, commentText, likeNum, replies }: Com
                 <p className='text-white'>{commentText}</p>
 
                 {
-                    likeNum === 0 ? null :
+                    likeNum <= 0 ? null :
                         <div className='flex items-center'>
                             <img className='w-4 h-4 mr-1' src='/like.svg'></img>
                             <p className='text-gray-300'>{likeNum}</p>
